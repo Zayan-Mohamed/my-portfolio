@@ -76,61 +76,74 @@
 /* Photo Area Styling */
 .photo-area {
   flex: 1 1 50%;
-  max-width: 600px;
+  max-width: 600px; /* Adjust the size of the image container */
+  height: 600px;
   position: relative;
-  border-radius: 12px;
+  border-radius: 50%; /* Makes the container circular */
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   margin-left: auto; /* Align to the right */
-  margin-right: 10%; /* Ensure no left margin */
+  margin-right: 10%; /* Add space to the right */
+  background: #115173; /* White background for the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
 
   .profile-photo {
     width: 100%;
     height: auto;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.05); /* Slight zoom on hover */
-    }
+    border-radius: 50%; /* Ensure the image fits the circle */
   }
 
   .photo-overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    border-radius: 50%; /* Ensure it matches the circular shape */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
     color: #fff;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 10px;
+    justify-content: center;
+    text-align: center;
     font-size: 14px;
-    opacity: 0;
+    opacity: 0; /* Hidden by default */
     transition: opacity 0.3s ease-in-out;
 
     p {
-      text-align: left;
       margin: 0;
+      padding: 5px 10px;
     }
   }
 
   &:hover .photo-overlay {
-    opacity: 1; /* Show overlay when hovered */
+    opacity: 1; /* Show overlay on hover */
   }
 }
 
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Ensure the canvas is behind the image and overlay */
+}
+
+
 @media screen and (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-  }
-
   .photo-area {
-    width: 100%;
-    margin-left: 0; /* Reset margin on small screens */
-  }
-
-  .contact-form {
-    width: 100%;
+    margin-left: auto; /* Reset alignment for smaller screens */
+    margin-right: auto; /* Center-align */
   }
 }
 
@@ -138,7 +151,7 @@
   position: absolute;
   background: #000;
   top: 50px;
-  right: 30%;
+  right: 1%;
   z-index: 999999;
   width: 267px;
   padding: 20px;

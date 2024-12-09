@@ -4,12 +4,15 @@ import Loader from 'react-loaders'
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
-import MyPhoto from '../../assets/images/Zimage.jpg'
+import MyPhoto from '../../assets/images/Zimage.png'
+import GradientBackground from '../GSAP/GradientBackground'
+import EngagingBackground from '../GSAP/EngagingBackground'
 import './index.scss'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const form = useRef()
+  const photoAreaRef = useRef(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -97,15 +100,16 @@ const Contact = () => {
             </form>
           </div>
         </div>
-        <div className="info-map">
+        {/* <div className="info-map">
           Zayan Mohamed,
           <br />
           Colombo, Sri Lanka,
           <br />
           Dias Place, Colombo  <br />
           <span>itsm.zayan@gmail.com</span>
-        </div>
-        <div className="photo-area">
+        </div> */}
+        <div className="photo-area" ref={photoAreaRef}>
+          <GradientBackground targetRef={photoAreaRef} />
           <img src={MyPhoto} alt="Zayan Mohamed" className="profile-photo" />
           <div className="photo-overlay">
             <p>
