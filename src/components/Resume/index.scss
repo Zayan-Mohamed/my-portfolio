@@ -1,0 +1,120 @@
+.resume-page {
+    padding-left: 100px;
+    padding-right: 50px;
+    width: calc(100% - 150px);
+    height: 100%;
+    overflow: auto;
+  
+    h1.page-title {
+      margin-left: 100px;
+      margin-top: 100px;
+    }
+  
+    .resume-nav {
+      font-size: larger;
+      font-weight: bolder;
+      gap: 20px;
+      margin-top: 40px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      position: relative;
+  
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+  
+        li {
+          display: inline;
+  
+          a {
+            color: #ffd700;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+  
+            &:hover {
+              color: #fff;
+              transform: scale(1.1);
+            }
+  
+            &:after {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 2px;
+              background: #fff;
+              transition: all 0.3s ease;
+              bottom: -5px;
+              left: 0;
+            }
+  
+            &:hover::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+  
+      .flat-button {
+        background-color: transparent;
+        color: #ffd700;
+        font-size: 18px;
+        padding: 10px 20px;
+        border: 1px solid #ffd700;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+  
+        &:hover {
+          background-color: #ffd700;
+          color: #333;
+        }
+      }
+    }
+  
+    .resume-content {
+      font-size: large;
+      margin: 5% 0 0 5%;
+      color: #ffd700;
+      display: flex;
+      gap: 100px;
+      flex-wrap: wrap;
+  
+      .resume-left, .resume-right {
+        flex: 1;
+        padding: 20px;
+  
+        .section {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+  
+          &.active-section {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  
+    p {
+      font-size: larger;
+      line-height: 1.6;
+      font-weight: 500;
+      color: #fff;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  
