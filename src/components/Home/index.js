@@ -8,32 +8,56 @@ import './index.scss'
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [currentJobIndex, setCurrentJobIndex] = useState(0)
+  const [transitioning, setTransitioning] = useState(false) // New state for animation control
 
-  const nameArray = ['a', 'y', 'a', 'n']
-  const jobArray = [
-    'w',
-    'e',
-    'b',
-    ' ',
-    'd',
-    'e',
-    'v',
-    'e',
-    'l',
-    'o',
-    'p',
-    'e',
-    'r',
-    '.',
+  const nameArray = ['a', 'y', 'a', 'n', ' ', 'F', 'a', 'i', 's', 'a', 'l']
+  const jobTitles = [
+    ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'e', 'n', 'g', 'i', 'n', 'e', 'e', 'r'],
+    ['d', 'a', 't', 'a', ' ', 'a', 'n', 'a', 'l', 'y', 's', 't'],
+    [
+      'f',
+      'u',
+      'l',
+      'l',
+      ' ',
+      's',
+      't',
+      'a',
+      'c',
+      'k',
+      ' ',
+      'd',
+      'e',
+      'v',
+      'e',
+      'l',
+      'o',
+      'p',
+      'e',
+      'r',
+    ],
   ]
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 4000)
-  
+
     return () => clearTimeout(timeout)
-  }, [])  
+  }, [])
+
+  useEffect(() => {
+    const jobChangeInterval = setInterval(() => {
+      setTransitioning(true) // Start transition
+      setTimeout(() => {
+        setCurrentJobIndex((prevIndex) => (prevIndex + 1) % jobTitles.length)
+        setTransitioning(false) // End transition after delay
+      }, 500) // Match this duration with the animation time
+    }, 4000) // Change job every 4 seconds
+
+    return () => clearInterval(jobChangeInterval)
+  }, [jobTitles.length])
 
   return (
     <>
@@ -55,11 +79,17 @@ const Home = () => {
               idx={15}
             />
             <br />
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={jobArray}
-              idx={22}
-            />
+            <div
+              className={`job-title ${
+                transitioning ? 'fade-out-in' : ''
+              }`} // Add animation class dynamically
+            >
+              <AnimatedLetters
+                letterClass={letterClass}
+                strArray={jobTitles[currentJobIndex]}
+                idx={15}
+              />
+            </div>
           </h1>
           <h2>Undergraduate / Web Developer / JavaScript Expert</h2>
           <Link to="/contact" className="flat-button">
