@@ -4,7 +4,7 @@ import AnimatedLetters from "../AnimatedLetters";
 import Loader from "react-loaders";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import emsystem from "../../assets/images/emsystem.png"
+import emsystem from "../../assets/images/emsystem.png";
 import cart from "../../assets/images/shopping-cart.png";
 import "./index.scss";
 
@@ -23,12 +23,14 @@ const Portfolio = () => {
         {
             image: emsystem,
             title: "EMSystem",
-            description: "Description of Project 1",
+            description: "",
+            link: "https://github.com/Zayan-Mohamed/my-portfolio.git",
         },
         {
             image: cart,
             title: "Shopping-Cart",
-            description: "Description of Project 2",
+            description: "",
+            link: "https://github.com/Zayan-Mohamed/Shopping-Cart.git", 
         },
     ];
 
@@ -56,13 +58,25 @@ const Portfolio = () => {
                     <Slider {...settings}>
                         {projects.map((project, index) => (
                             <div key={index} className="slider-item">
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="slider-image"
-                                />
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="slider-image"
+                                    />
+                                </a>
                                 <div className="slider-description">
-                                    <h2>{project.title}</h2>
+                                    <h2>
+                                        <AnimatedLetters
+                                            letterClass={letterClass}
+                                            strArray={project.title.split("")}
+                                            idx={index * 10}
+                                        />
+                                    </h2>
                                     <p>{project.description}</p>
                                 </div>
                             </div>
