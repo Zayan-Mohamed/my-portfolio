@@ -6,7 +6,6 @@ import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
 import MyPhoto from '../../assets/images/Zimage.png'
 import GradientBackground from '../GSAP/GradientBackground'
-import EngagingBackground from '../GSAP/EngagingBackground'
 import './index.scss'
 
 const Contact = () => {

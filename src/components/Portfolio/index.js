@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { getDocs, collection } from "firebase/firestore";
-import { db } from "../../firebase";
+import Slider from "react-slick";
 import AnimatedLetters from "../AnimatedLetters";
 import Loader from "react-loaders";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import emsystem from "../../assets/images/emsystem.png"
+import cart from "../../assets/images/shopping-cart.png";
 import "./index.scss";
 
 const Portfolio = () => {
     const [letterClass, setLetterClass] = useState("text-animate");
-    const [portfolio, setPortfolio] = useState([]);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -17,35 +19,27 @@ const Portfolio = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    useEffect(() => {
-        const getPortfolio = async () => {
-            try {
-                const querySnapshot = await getDocs(collection(db, "portfolio"));
-                setPortfolio(querySnapshot.docs.map((doc) => doc.data()));
-            } catch (error) {
-                console.error("Error fetching portfolio: ", error);
-            }
-        };
+    const projects = [
+        {
+            image: emsystem,
+            title: "EMSystem",
+            description: "Description of Project 1",
+        },
+        {
+            image: cart,
+            title: "Shopping-Cart",
+            description: "Description of Project 2",
+        },
+    ];
 
-        getPortfolio();
-    }, []);
-
-    const renderPortfolio = () => {
-        return portfolio.map((port, idx) => (
-            <div className="image-box" key={idx}>
-                <img src={port.image} className="portfolio-image" alt="portfolio" />
-                <div className="content">
-                    <p className="title">{port.name}</p>
-                    <h4 className="description">{port.description}</h4>
-                    <button
-                        className="btn"
-                        onClick={() => window.open(port.url)}
-                    >
-                        View
-                    </button>
-                </div>
-            </div>
-        ));
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
     };
 
     return (
@@ -58,7 +52,23 @@ const Portfolio = () => {
                         idx={15}
                     />
                 </h1>
-                <div className="images-container">{renderPortfolio()}</div>
+                <div className="slider-container">
+                    <Slider {...settings}>
+                        {projects.map((project, index) => (
+                            <div key={index} className="slider-item">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="slider-image"
+                                />
+                                <div className="slider-description">
+                                    <h2>{project.title}</h2>
+                                    <p>{project.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
             </div>
             <Loader type="pacman" />
         </>
