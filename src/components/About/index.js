@@ -57,8 +57,17 @@ const About = () => {
             and refining my skills to deliver the best possible user experience.
           </p>
           <p>
-            If I were to define myself in one sentence: I'm a dedicated learner,
-            tech enthusiast, aspiring innovator, and a team player with a flair
+            If I were to define myself in one sentence: I'm a {' '}
+            <Typewriter 
+            words = {[
+              'dedicated learner',
+              ' tech enthusiast',
+              'aspiring innovator',
+            ]}
+            typingSpeed={150}
+              pauseTime={2000}
+            />
+            {' '}and a team player with a flair
             for leadership and creativity. Beyond coding, I'm an adventurer who
             loves sports, photography, and exploring the endless possibilities
             of technology!

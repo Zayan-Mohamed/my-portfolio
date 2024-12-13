@@ -16,15 +16,15 @@ const Logo = () => {
     gsap.registerPlugin(DrawSVGPlugin)
 
     const timeline = gsap.timeline()
-    timeline.to(bgRef.current, { duration: 3, opacity: 1 })
-    timeline.from(outlineLogoRef1.current, { drawSVG: 0, duration: 16 })
-    timeline.from(outlineLogoRef2.current, { drawSVG: 0, duration: 16 }, '<') // Parallel animation
-    timeline.from(outlineLogoRef3.current, { drawSVG: 0, duration: 16 }, '<')
+    timeline.to(bgRef.current, { duration: 1.5, opacity: 1 })
+    timeline.from(outlineLogoRef1.current, { drawSVG: 0, duration: 18 })
+    timeline.from(outlineLogoRef2.current, { drawSVG: 0, duration: 18 }, '<') // Parallel animation
+    timeline.from(outlineLogoRef3.current, { drawSVG: 0, duration: 18 }, '<')
 
     gsap.fromTo(
       solidLogoRef.current,
       { opacity: 0 },
-      { opacity: 1, delay: 4, duration: 6 }
+      { opacity: 1, delay: 4, duration: 4 }
     )
 
     return () => timeline.kill() // Clean up
