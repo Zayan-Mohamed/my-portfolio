@@ -83,6 +83,12 @@
     animation: fadeIn 1s 1.8s backwards;
   }
 
+  .btn-div{
+    display: flex;
+    align-items: flex-start;
+    gap: 13.5%;
+  }
+
   .flat-button {
     color: #ffd700;
     font-size: 13px;

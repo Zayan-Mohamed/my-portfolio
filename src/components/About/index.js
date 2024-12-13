@@ -10,18 +10,20 @@ import {
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Typewriter from './Typewriter'
 import './index.scss'
 
+
 const About = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
+  const [letterClass, setLetterClass] = useState('text-animate');
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3000)
+      setLetterClass('text-animate-hover');
+    }, 3000);
 
-    return () => clearTimeout(timer) // Proper cleanup
-  }, [])
+    return () => clearTimeout(timer); // Proper cleanup
+  }, []);
 
   return (
     <>
@@ -35,20 +37,29 @@ const About = () => {
             />
           </h1>
           <p>
-            I'm a highly motivated and ambitious front-end developer passionate
-            about creating elegant, user-friendly designs that bring ideas to
-            life. I'm eager to join an innovative IT company where I can tackle
-            exciting challenges and contribute to impactful projects using
-            cutting-edge technologies.
+            I'm a highly motivated and ambitious{' '}
+            <Typewriter
+              words={[
+                'full-stack developer',
+                'software engineer',
+                'designer',
+              ]}
+              typingSpeed={150}
+              pauseTime={2000}
+            />
+            {' '}passionate about creating elegant, user-friendly designs that bring
+            ideas to life. I'm eager to join an innovative IT company where I
+            can tackle exciting challenges and contribute to impactful projects
+            using cutting-edge technologies.
           </p>
           <p align="LEFT">
             Curious by nature and constantly learning, I enjoy solving problems
             and refining my skills to deliver the best possible user experience.
           </p>
           <p>
-            If I were to define myself in one sentence: I’m a dedicated learner,
+            If I were to define myself in one sentence: I'm a dedicated learner,
             tech enthusiast, aspiring innovator, and a team player with a flair
-            for leadership and creativity. Beyond coding, I’m an adventurer who
+            for leadership and creativity. Beyond coding, I'm an adventurer who
             loves sports, photography, and exploring the endless possibilities
             of technology!
           </p>
@@ -79,7 +90,7 @@ const About = () => {
       </div>
       <Loader type="pacman" />
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;
