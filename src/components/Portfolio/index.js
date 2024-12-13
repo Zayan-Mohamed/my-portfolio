@@ -4,6 +4,9 @@ import AnimatedLetters from "../AnimatedLetters";
 import Loader from "react-loaders";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { faGithub } from '@fortawesome/free-brands-svg-icons'; // For GitHub icon
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'; // For external link icon
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import emsystem from "../../assets/images/emsystem.png";
 import cart from "../../assets/images/shopping-cart.png";
 import "./index.scss";
@@ -23,14 +26,16 @@ const Portfolio = () => {
         {
             image: emsystem,
             title: "EMSystem",
-            description: "",
+            description: "A comprehensive Employee Management System for managing employees.",
             link: "https://github.com/Zayan-Mohamed/my-portfolio.git",
+            website: "https://example.com/emsystem", // Replace with actual website link
         },
         {
             image: cart,
             title: "Shopping-Cart",
-            description: "",
-            link: "https://github.com/Zayan-Mohamed/Shopping-Cart.git", 
+            description: "A fully functional shopping cart with payment gateway integration.",
+            link: "https://github.com/Zayan-Mohamed/Shopping-Cart.git",
+            website: "https://example.com/shopping-cart", // Replace with actual website link
         },
     ];
 
@@ -78,6 +83,24 @@ const Portfolio = () => {
                                         />
                                     </h2>
                                     <p>{project.description}</p>
+                                    <div className="icon-container">
+                                        <a
+                                            href={project.website}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="project-icon"
+                                        >
+                                            <FontAwesomeIcon icon={faExternalLinkAlt} />
+                                        </a>
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="project-icon"
+                                        >
+                                            <FontAwesomeIcon icon={faGithub} />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         ))}

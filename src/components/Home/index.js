@@ -13,21 +13,21 @@ const Home = () => {
 
   const nameArray = ['a', 'y', 'a', 'n', ' ', 'F', 'a', 'i', 's', 'a', 'l']
   const jobTitles = [
-    ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'e', 'n', 'g', 'i', 'n', 'e', 'e', 'r'],
-    ['d', 'a', 't', 'a', ' ', 'a', 'n', 'a', 'l', 'y', 's', 't'],
+    ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r'],
+    ['D', 'a', 't', 'a', ' ', 'A', 'n', 'a', 'l', 'y', 's', 't'],
     [
-      'f',
+      'F',
       'u',
       'l',
       'l',
       ' ',
-      's',
+      'S',
       't',
       'a',
       'c',
       'k',
       ' ',
-      'd',
+      'D',
       'e',
       'v',
       'e',
@@ -91,10 +91,15 @@ const Home = () => {
               />
             </div>
           </h1>
-          <h2>Undergraduate / Web Developer / JavaScript Expert</h2>
+          <h2>Undergraduate / Passionate Developer / Designer </h2>
+          <div className = "btn-div">
           <Link to="/contact" className="flat-button">
-            CONTACT ME
+            Get in Touch
           </Link>
+          <Link to="/resume" className="flat-button">
+            My Resume
+          </Link>
+          </div>
         </div>
         <Logo />
       </div>
