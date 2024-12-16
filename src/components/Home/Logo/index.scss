@@ -1,8 +1,14 @@
+.cls-1 {
+  stroke: #ffd700; /* Updated color */
+  stroke-width: 2px; /* Adjust width as needed */
+  fill: none; /* Ensure paths are not filled */
+}
+
 .logo-container {
   z-index: 0;
-  width: 650px; /* Increased size for expansion */
-  height: 850px; /* Increased size for expansion */
-  opacity: 0;
+  width: 650px; /* Size for expansion */
+  height: 850px; /* Size for expansion */
+  opacity: 0; /* Initial fade-in state */
   position: absolute;
   top: 30%;
   right: 6%;
@@ -16,20 +22,26 @@
   svg {
     width: 90%; /* Adjust SVG size proportionally */
     height: auto;
-    bottom: 0;
     transform: rotateZ(30deg) !important;
+    .cls-1 {
+      stroke: #ffd700; /* Ensure cls-1 matches global styles */
+    }
   }
 
   .solid-logo {
+    width: 90%; /* Same as the outline logo */
+    height: auto;
     position: absolute;
-    width: 90%; /* Adjust logo size proportionally */
-    opacity: 0;
-    transform: rotateZ(30deg) !important;
-    z-index: 1;
-  }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(30deg); /* Center and rotate */
+    opacity: 0; /* Initial state */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in */
+    z-index: 1; /* Ensure it stays above the outline */
+  }  
 }
 
 .svg-container {
-  stroke: #ffd700;
-  stroke-width: 2;
+  stroke: #ffd700; /* Matches the cls-1 stroke color */
+  stroke-width: 2px; /* Ensure consistency with cls-1 */
 }
