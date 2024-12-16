@@ -1,17 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Loader from 'react-loaders'
-// import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { useRef } from 'react'
-import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
 import MyPhoto from '../../assets/images/Zimage.png'
 import GradientBackground from '../GSAP/GradientBackground'
+import emailjs from '@emailjs/browser'
 import './index.scss'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [loading, setLoading] = useState(false) // Loading state for form submission
   const form = useRef()
-  const photoAreaRef = useRef(null);
+  const photoAreaRef = useRef(null)
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,6 +20,7 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault()
+    setLoading(true)
 
     emailjs
       .sendForm(
@@ -38,6 +38,9 @@ const Contact = () => {
           alert('Failed to send the message. Please try again later.')
         }
       )
+      .finally(() => {
+        setLoading(false)
+      })
   }
 
   return (
@@ -92,21 +95,13 @@ const Contact = () => {
                 </li>
                 <li>
                   <button type="submit" className="flat-button">
-                    SEND
+                    {loading ? 'Sending...' : 'SEND'}
                   </button>
                 </li>
               </ul>
             </form>
           </div>
         </div>
-        {/* <div className="info-map">
-          Zayan Mohamed,
-          <br />
-          Colombo, Sri Lanka,
-          <br />
-          Dias Place, Colombo  <br />
-          <span>itsm.zayan@gmail.com</span>
-        </div> */}
         <div className="photo-area" ref={photoAreaRef}>
           <GradientBackground targetRef={photoAreaRef} />
           <img src={MyPhoto} alt="Zayan Mohamed" className="profile-photo" />
@@ -120,21 +115,8 @@ const Contact = () => {
             </p>
           </div>
         </div>
-
-        {/* <div className="map-wrap">
-          <MapContainer
-            center={[6.9368027, 79.8580053]}
-            zoom={15}
-            scrollWheelZoom={false}
-          >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[6.9368027, 79.8580053]}>
-              <Popup>Let's meet and discuss amazing ideas over coffee!</Popup>
-            </Marker>
-          </MapContainer>
-        </div> */}
       </div>
-      <Loader type="pacman" />
+      {loading && <Loader type="pacman" />} {/* Loader shown when the form is submitting */}
     </>
   )
 }
