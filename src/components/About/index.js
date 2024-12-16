@@ -13,17 +13,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Typewriter from './Typewriter'
 import './index.scss'
 
-
 const About = () => {
-  const [letterClass, setLetterClass] = useState('text-animate');
+  const [letterClass, setLetterClass] = useState('text-animate')
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLetterClass('text-animate-hover');
-    }, 3000);
+      setLetterClass('text-animate-hover')
+    }, 3000)
 
-    return () => clearTimeout(timer); // Proper cleanup
-  }, []);
+    return () => clearTimeout(timer) // Proper cleanup
+  }, [])
 
   return (
     <>
@@ -39,15 +38,11 @@ const About = () => {
           <p>
             I'm a highly motivated and ambitious{' '}
             <Typewriter
-              words={[
-                'full-stack developer',
-                'software engineer',
-                'designer',
-              ]}
+              words={['full-stack developer', 'software engineer', 'designer']}
               typingSpeed={150}
               pauseTime={2000}
-            />
-            {' '}passionate about creating elegant, user-friendly designs that bring
+            />{' '}
+            passionate about creating elegant, user-friendly designs that bring
             ideas to life. I'm eager to join an innovative IT company where I
             can tackle exciting challenges and contribute to impactful projects
             using cutting-edge technologies.
@@ -58,7 +53,7 @@ const About = () => {
           </p>
           <p>
             If I were to define myself in one sentence: I'm a dedicated learner,
-            tech enthusiast, aspiring innovator, and a team player with a flair
+            tech enthusiast, aspiring innovator and a team player with a flair
             for leadership and creativity. Beyond coding, I'm an adventurer who
             loves sports, photography, and exploring the endless possibilities
             of technology!
@@ -90,7 +85,7 @@ const About = () => {
       </div>
       <Loader type="pacman" />
     </>
-  );
-};
+  )
+}
 
-export default About;
+export default About
