@@ -1,47 +1,53 @@
-import { useEffect, useState, useRef } from 'react'
-import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
-import MyPhoto from '../../assets/images/Zimage.png'
-import GradientBackground from '../GSAP/GradientBackground'
-import emailjs from '@emailjs/browser'
-import './index.scss'
+import { useEffect, useState, useRef } from 'react';
+import Loader from 'react-loaders';
+import AnimatedLetters from '../AnimatedLetters';
+import MyPhoto from '../../assets/images/Zimage.png';
+import GradientBackground from '../GSAP/GradientBackground';
+import emailjs from '@emailjs/browser';
+import './index.scss';
+
+// Debounce utility function
+const debounce = (func, delay) => {
+  let timer;
+  return function (...args) {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => func(...args), delay);
+  };
+};
 
 const Contact = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
-  const [loading, setLoading] = useState(false) // Loading state for form submission
-  const form = useRef()
-  const photoAreaRef = useRef(null)
+  const [letterClass, setLetterClass] = useState('text-animate');
+  const [loading, setLoading] = useState(false); // Loading state for form submission
+  const form = useRef();
+  const photoAreaRef = useRef(null);
 
   useEffect(() => {
     setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3000)
-  }, [])
+      setLetterClass('text-animate-hover');
+    }, 3000);
+  }, []);
 
-  const sendEmail = (e) => {
-    e.preventDefault()
-    setLoading(true)
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setLoading(true); // Show loader
 
-    emailjs
-      .sendForm(
+    try {
+      await emailjs.sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         form.current,
         process.env.REACT_APP_EMAILJS_USER_ID
-      )
-      .then(
-        () => {
-          alert('Message successfully sent!')
-          form.current.reset()
-        },
-        () => {
-          alert('Failed to send the message. Please try again later.')
-        }
-      )
-      .finally(() => {
-        setLoading(false)
-      })
-  }
+      );
+      alert('Message successfully sent!');
+      form.current.reset();
+    } catch (error) {
+      alert('Failed to send the message. Please try again later.');
+    } finally {
+      setLoading(false); // Hide loader after operation completes
+    }
+  };
+
+  const debouncedSendEmail = debounce(sendEmail, 500); // Debounced sendEmail function
 
   return (
     <>
@@ -55,43 +61,22 @@ const Contact = () => {
             />
           </h1>
           <p>
-            I'm open to collaboration and freelance opportunities. Feel free to
-            reach out for projects, questions, or just to say hello using the
-            form below.
+            I'm open to collaboration and freelance opportunities. Feel free to reach out for projects, questions, or just to say hello using the form below.
           </p>
           <div className="contact-form">
-            <form ref={form} onSubmit={sendEmail}>
+            <form ref={form} onSubmit={debouncedSendEmail}>
               <ul>
                 <li className="half">
-                  <input
-                    placeholder="Your Name"
-                    type="text"
-                    name="name"
-                    required
-                  />
+                  <input placeholder="Your Name" type="text" name="name" required />
                 </li>
                 <li className="half">
-                  <input
-                    placeholder="Your Email"
-                    type="email"
-                    name="email"
-                    required
-                  />
+                  <input placeholder="Your Email" type="email" name="email" required />
                 </li>
                 <li>
-                  <input
-                    placeholder="Subject"
-                    type="text"
-                    name="subject"
-                    required
-                  />
+                  <input placeholder="Subject" type="text" name="subject" required />
                 </li>
                 <li>
-                  <textarea
-                    placeholder="Message"
-                    name="message"
-                    required
-                  ></textarea>
+                  <textarea placeholder="Message" name="message" required></textarea>
                 </li>
                 <li>
                   <button type="submit" className="flat-button">
@@ -102,6 +87,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
+
         <div className="photo-area" ref={photoAreaRef}>
           <GradientBackground targetRef={photoAreaRef} />
           <img src={MyPhoto} alt="Zayan Mohamed" className="profile-photo" />
@@ -118,7 +104,7 @@ const Contact = () => {
       </div>
       {loading && <Loader type="pacman" />} {/* Loader shown when the form is submitting */}
     </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
