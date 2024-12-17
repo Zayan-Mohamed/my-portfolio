@@ -27,8 +27,7 @@ const Contact = () => {
     }, 3000);
   }, []);
 
-  const sendEmail = async (e) => {
-    e.preventDefault();
+  const sendEmail = async () => {
     setLoading(true); // Show loader
 
     try {
@@ -47,7 +46,13 @@ const Contact = () => {
     }
   };
 
-  const debouncedSendEmail = debounce(sendEmail, 500); // Debounced sendEmail function
+  // Debounced version of sendEmail
+  const debouncedSendEmail = debounce(sendEmail, 500);
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission
+    debouncedSendEmail(); // Call the debounced function
+  };
 
   return (
     <>
@@ -64,7 +69,7 @@ const Contact = () => {
             I'm open to collaboration and freelance opportunities. Feel free to reach out for projects, questions, or just to say hello using the form below.
           </p>
           <div className="contact-form">
-            <form ref={form} onSubmit={debouncedSendEmail}>
+            <form ref={form} onSubmit={handleSubmit}>
               <ul>
                 <li className="half">
                   <input placeholder="Your Name" type="text" name="name" required />
