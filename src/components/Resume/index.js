@@ -15,6 +15,12 @@ const Resume = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const Divider = () => (
+    <div className="divider">
+      <div className="stripes"></div>
+    </div>
+  );
+
   return (
     <>
       <div className="container resume-page" id="scroll-container">
@@ -106,6 +112,7 @@ const Resume = () => {
                 <p>G.C.E. Ordinary Level, Al-Hikma College Colombo</p>
               </section>
             </Element>
+            <Divider />
 
             <Element name="experience-section">
               <section id="experience-section">
@@ -122,6 +129,7 @@ const Resume = () => {
                 <hr />
               </section>
             </Element>
+            <Divider />
 
             <Element name="projects-section">
               <section id="projects-section">
@@ -148,6 +156,7 @@ const Resume = () => {
                 </p>
               </section>
             </Element>
+            <Divider />
 
             <Element name="skills-section">
               <section id="skills-section">
