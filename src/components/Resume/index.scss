@@ -45,7 +45,12 @@
           &:hover {
             color: #fff;
             transform: scale(1.1);
-            background-color: rgba(255, 215, 0, 0.1); /* Light yellow background */
+            background-color: rgba(
+              255,
+              215,
+              0,
+              0.1
+            ); /* Light yellow background */
           }
 
           &:after {
@@ -78,8 +83,8 @@
       transition: all 0.3s ease;
       position: absolute;
       right: 90px;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 15%;
+      transform: translateY(-15%);
 
       &:hover {
         background-color: #ffd700;
