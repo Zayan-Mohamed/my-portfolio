@@ -9,6 +9,7 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'; // For ex
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import emsystem from "../../assets/images/emsystem.png";
 import cart from "../../assets/images/shopping-cart.png";
+import chatzooka from "../../assets/images/chatzooka.png"
 import "./index.scss";
 
 const Portfolio = () => {
@@ -36,6 +37,13 @@ const Portfolio = () => {
             description: "A fully functional shopping cart with payment gateway integration.",
             link: "https://github.com/Zayan-Mohamed/Shopping-Cart.git",
             website: "https://example.com/shopping-cart", 
+        },
+        {
+            image: chatzooka,
+            title: "Chatzooka",
+            description: "A fully functional Chat Application using the MERN stack and Firebase",
+            link: "https://github.com/Zayan-Mohamed/Chatzooka.git",
+            website: "https://chatzooka.vercel.app/", 
         },
         
     ];

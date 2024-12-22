@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Element } from 'react-scroll';
-import './index.scss';
-import AnimatedLetters from '../AnimatedLetters';
-import Loader from 'react-loaders';
+import React, { useState, useEffect } from 'react'
+import { Link, Element } from 'react-scroll'
+import './index.scss'
+import AnimatedLetters from '../AnimatedLetters'
+import Loader from 'react-loaders'
 
 const Resume = () => {
-  const [letterClass, setLetterClass] = useState('text-animate');
+  const [letterClass, setLetterClass] = useState('text-animate')
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLetterClass('text-animate-hover');
-    }, 3000);
+      setLetterClass('text-animate-hover')
+    }, 3000)
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => clearTimeout(timer)
+  }, [])
 
   const Divider = () => (
     <div className="divider">
       <div className="stripes"></div>
     </div>
-  );
+  )
 
   return (
     <>
@@ -87,7 +87,7 @@ const Resume = () => {
           </ul>
 
           <a
-            href="https://drive.google.com/file/d/1R9wS7SxYuITSzLEEJkdy_uWAby_jguux/view?usp=sharing"
+            href="https://drive.google.com/file/d/1mVZ6EFWn-2dVtUT-HgmQKFNqa7g-73vL/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             download="Zayan_Mohamed_CV"
@@ -118,13 +118,14 @@ const Resume = () => {
               <section id="experience-section">
                 <h2>Experience</h2>
                 <p>
-                  <b>Trainee Associate</b> <br /> <i>Legacy Health LLC, Colombo</i>
+                  <b>Trainee Associate</b> <br />{' '}
+                  <i>Legacy Health LLC, Colombo</i>
                 </p>
                 <p>
-                  Coordinated with U.S. insurance companies to process claims and
-                  secure reimbursements for Legacy Health physicians in the
-                  Emergency Room of Texas, ensuring compliance and resolving issues
-                  efficiently.
+                  Coordinated with U.S. insurance companies to process claims
+                  and secure reimbursements for Legacy Health physicians in the
+                  Emergency Room of Texas, ensuring compliance and resolving
+                  issues efficiently.
                 </p>
                 <hr />
               </section>
@@ -144,15 +145,23 @@ const Resume = () => {
                 <p>
                   <b>EMSystem — Java, MySQL Workbench</b>
                   <br />
-                  Designed and developed a professional Employee Management System
-                  with role-based access for admins and employees.
+                  Designed and developed a professional Employee Management
+                  System with role-based access for admins and employees.
                 </p>
                 <hr />
                 <p>
-                  <b>Shopping-Cart</b>
+                  <b>Shopping-Cart - Material-UI, MERN</b>
                   <br />
-                  Designed and developed an online shopping store web application
-                  using MERN stack.
+                  Designed and developed an online shopping store web
+                  application using MERN stack.
+                </p>
+                <hr />
+                <p>
+                  <b>Chatzooka - React, Firebase</b>
+                  <br />
+                  Developed a fully functional Chat Application using the MERN
+                  stack and Firebase, featuring real-time messaging, user
+                  authentication, and secure data storage.
                 </p>
               </section>
             </Element>
@@ -162,8 +171,8 @@ const Resume = () => {
               <section id="skills-section">
                 <h2>Skills</h2>
                 <p>
-                  Programming Languages: Python, Java, C/C++, HTML, JavaScript, CSS,
-                  .NET
+                  Programming Languages: Python, Java, C/C++, HTML, JavaScript,
+                  CSS, .NET
                 </p>
                 <p>Data Analysis Tools: SQL, Power BI, Jupyter Notebooks</p>
                 <p>Machine Learning Frameworks: TensorFlow, React</p>
@@ -178,7 +187,7 @@ const Resume = () => {
       </div>
       <Loader type="pacman" />
     </>
-  );
-};
+  )
+}
 
-export default Resume;
+export default Resume
