@@ -28,15 +28,16 @@ const Portfolio = () => {
             title: "EMSystem",
             description: "A comprehensive Employee Management System for managing employees.",
             link: "https://github.com/Zayan-Mohamed/my-portfolio.git",
-            website: "https://example.com/emsystem", // Replace with actual website link
+            website: "https://example.com/emsystem",
         },
         {
             image: cart,
             title: "Shopping-Cart",
             description: "A fully functional shopping cart with payment gateway integration.",
             link: "https://github.com/Zayan-Mohamed/Shopping-Cart.git",
-            website: "https://example.com/shopping-cart", // Replace with actual website link
+            website: "https://example.com/shopping-cart", 
         },
+        
     ];
 
     const settings = {

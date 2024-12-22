@@ -23,7 +23,12 @@
         width: 100%;
         height: auto;
         border-radius: 10px;
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
+      .slider-image:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.7));
       }
 
       .slider-description {
@@ -61,7 +66,8 @@
           color: white;
           opacity: 0.7;
           font-size: 1.5rem;
-          transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+          transition: opacity 0.3s ease, background-color 0.3s ease,
+            transform 0.3s ease;
         }
 
         /* Hover animation */
