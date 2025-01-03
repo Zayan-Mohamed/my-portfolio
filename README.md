@@ -1,68 +1,119 @@
-# Getting Started with Create React App
+# Zayan Mohamed - My Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the source code for my personal portfolio website! This project showcases my skills, projects, and professional journey as a developer.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+[View Portfolio](https://your-portfolio-url.com)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Modern UI**: Built with ReactJS and GSAP for smooth animations.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop.
+- **Interactive Elements**: Includes typewriter effects, engaging backgrounds, and dynamic navigation.
+- **Project Showcase**: Displays projects with descriptions, technologies used, and links to GitHub repositories.
+- **Contact Section**: Allows visitors to get in touch via email.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Directory Structure
 
-### `npm test`
+Directory structure:
+└── Zayan-Mohamed-my-portfolio/
+├── README.md
+├── package.json
+├── public/
+│ ├── favicon.webp
+│ ├── index.html
+│ ├── manifest.json
+│ ├── robots.txt
+│ └── site.webmanifest
+└── src/
+├── App.js
+├── App.scss
+├── App.test.js
+├── ErrorBoundary.js
+├── firebase.js
+├── index.css
+├── index.js
+├── reportWebVitals.js
+├── setupTests.js
+├── .prettierrc
+├── assets/
+│ ├── fonts/
+│ │ ├── CoolveticaRg-Regular.woff
+│ │ ├── CoolveticaRg-Regular.woff2
+│ │ ├── LaBelleAurore.woff
+│ │ ├── LaBelleAurore.woff2
+│ │ └── helvetica-neu.ttf
+│ └── images/
+└── components/
+├── About/
+│ ├── Typewriter.jsx
+│ ├── index.js
+│ └── index.scss
+├── AnimatedLetters/
+│ ├── index.js
+│ └── index.scss
+├── Contact/
+│ ├── index.js
+│ └── index.scss
+├── Dashboard/
+│ ├── home.js
+│ └── index.js
+├── GSAP/
+│ ├── EngagingBackground.jsx
+│ └── GradientBackground.jsx
+├── Home/
+│ ├── index.js
+│ ├── index.scss
+│ └── Logo/
+│ ├── index.js
+│ └── index.scss
+├── Layout/
+│ ├── index.js
+│ └── index.scss
+├── Login/
+│ └── index.js
+├── Portfolio/
+│ ├── index.js
+│ └── index.scss
+├── ProjectDetails/
+│ ├── index.js
+│ └── index.scss
+├── Resume/
+│ ├── index.js
+│ └── index.scss
+└── Sidebar/
+├── index.js
+└── index.scss
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **Frontend**: ReactJS, GSAP, SCSS
+- **Backend**: Firebase
+- **Build Tools**: Webpack, Babel
+- **Icons**: FontAwesome
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/Zayan-Mohamed/my-portfolio.git
+   cd Zayan-Mohamed-my-portfolio
+   npm install
+   npm start
+   Open http://localhost:3000 in your browser.
 
-### `npm run eject`
+   ## Usage
+   Explore the website to:
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **About**: Learn about my professional journey, skills, and interests.
+- **Portfolio**: Discover my projects with detailed descriptions, technologies used, and live demos.
+- **Resume**: View or download my professional resume.
+- **Contact**: Use the contact form to get in touch with me directly.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Zayan Mohamed**  
+[GitHub](https://github.com/Zayan-Mohamed) | [LinkedIn](https://linkedin.com/in/zayan-mohamed) | [Email](mailto:itsm.zayan@gmail.com)
