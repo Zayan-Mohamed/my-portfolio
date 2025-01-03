@@ -13,7 +13,25 @@ const Home = () => {
 
   const nameArray = ['a', 'y', 'a', 'n', ' ', 'F', 'a', 'i', 's', 'a', 'l']
   const jobTitles = [
-    ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r'],
+    [
+      'S',
+      'o',
+      'f',
+      't',
+      'w',
+      'a',
+      'r',
+      'e',
+      ' ',
+      'E',
+      'n',
+      'g',
+      'i',
+      'n',
+      'e',
+      'e',
+      'r',
+    ],
     ['D', 'a', 't', 'a', ' ', 'A', 'n', 'a', 'l', 'y', 's', 't'],
     [
       'F',
@@ -69,21 +87,14 @@ const Home = () => {
             <br />
             <span className={`${letterClass} _13`}>I</span>
             <span className={`${letterClass} _14`}>'m</span>
-            <img
-              src={LogoTitle}
-              alt="JavaScript Developer Name, Web Developer Name"
-            />
+            <img src={LogoTitle} alt="Logo" />
             <AnimatedLetters
               letterClass={letterClass}
               strArray={nameArray}
               idx={15}
             />
             <br />
-            <div
-              className={`job-title ${
-                transitioning ? 'fade-out-in' : ''
-              }`} // Add animation class dynamically
-            >
+            <div className={`job-title ${transitioning ? 'fade-out-in' : ''}`}>
               <AnimatedLetters
                 letterClass={letterClass}
                 strArray={jobTitles[currentJobIndex]}
@@ -91,20 +102,19 @@ const Home = () => {
               />
             </div>
           </h1>
-          <h2>Undergraduate / Passionate Developer / Designer </h2>
-          <div className = "btn-div">
-          <Link to="/contact" className="flat-button">
-            Get in Touch
-          </Link>
-          <Link to="/resume" className="flat-button">
-            My Resume
-          </Link>
+          <h2>Undergraduate / Passionate Developer / Designer</h2>
+          <div className="btn-div">
+            <Link to="/contact" className="flat-button">
+              Get in Touch
+            </Link>
+            <Link to="/resume" className="flat-button">
+              My Resume
+            </Link>
           </div>
         </div>
         <Logo />
+        <Loader type="pacman" />
       </div>
-
-      <Loader type="pacman" />
     </>
   )
 }
