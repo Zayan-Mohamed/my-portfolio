@@ -11,6 +11,7 @@ import {
   faJs,
   faCss3,
   faHtml5,
+  faJava,
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDatabase } from '@fortawesome/free-solid-svg-icons'
@@ -26,6 +27,7 @@ const techIcons = {
   Express: faNodeJs,
   HTML: faHtml5,
   Firebase: faDatabase,
+  Java: faJava,
 }
 
 const Portfolio = () => {
@@ -48,7 +50,7 @@ const Portfolio = () => {
         'A comprehensive Employee Management System for managing employees.',
       link: 'https://github.com/Zayan-Mohamed/my-portfolio.git',
       website: 'https://example.com/emsystem',
-      technologies: ['React', 'JavaScript', 'CSS'],
+      technologies: ['Java', 'CSS', 'HTML'], // Fixed 'Java' to 'Java'
     },
     {
       image: cart,
@@ -57,7 +59,7 @@ const Portfolio = () => {
         'A fully functional shopping cart with payment gateway integration.',
       link: 'https://github.com/Zayan-Mohamed/Shopping-Cart.git',
       website: 'https://example.com/shopping-cart',
-      technologies: ['TypeScript', 'React', 'Node'], // Fixed 'Node.js' to 'Node'
+      technologies: ['React', 'Node', 'MongoDB'], // Fixed 'Node.js' to 'Node'
     },
     {
       image: chatzooka,
@@ -66,7 +68,7 @@ const Portfolio = () => {
         'A fully functional Chat Application using the MERN stack and Firebase',
       link: 'https://github.com/Zayan-Mohamed/Chatzooka.git',
       website: 'https://chatzooka.vercel.app/',
-      technologies: ['MongoDB', 'Express', 'React', 'Node', 'Firebase'], // Fixed 'Express.js' and 'Node.js'
+      technologies: [ 'React', 'Node', 'Firebase'], // Fixed 'Express.js' and 'Node.js'
     },
   ]
 
