@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react'
 import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
 import ProjectDetails from '../ProjectDetails'
-import emsystem from '../../assets/images/emsystem.png'
-import cart from '../../assets/images/shopping-cart.png'
-import chatzooka from '../../assets/images/chatzooka.png'
 import {
   faReact,
   faNodeJs,
@@ -12,22 +9,27 @@ import {
   faCss3,
   faHtml5,
   faJava,
+  faAws,
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDatabase } from '@fortawesome/free-solid-svg-icons'
+import { SiNextdotjs, SiPostgresql, SiFirebase, SiTypescript } from 'react-icons/si'
 import './index.scss'
 
 const techIcons = {
   React: faReact,
   JavaScript: faJs,
-  TypeScript: faJs,
+  TypeScript: SiTypescript,
   Node: faNodeJs,
   CSS: faCss3,
   MongoDB: faDatabase,
   Express: faNodeJs,
   HTML: faHtml5,
-  Firebase: faDatabase,
+  Firebase: SiFirebase,
   Java: faJava,
+  AWS: faAws,
+  'Next.js': SiNextdotjs, // Add Next.js icon
+  PostgreSQL: SiPostgresql, // Add PostgreSQL icon
 }
 
 const Portfolio = () => {
@@ -44,7 +46,7 @@ const Portfolio = () => {
 
   const projects = [
     {
-      image: emsystem,
+      image: './emsystem.png',
       title: 'EMSystem',
       description:
         'A comprehensive Employee Management System for managing employees.',
@@ -53,7 +55,7 @@ const Portfolio = () => {
       technologies: ['Java', 'CSS', 'HTML'], // Fixed 'Java' to 'Java'
     },
     {
-      image: cart,
+      image: './cart.png',
       title: 'Shopping-Cart',
       description:
         'A fully functional shopping cart with payment gateway integration.',
@@ -62,13 +64,22 @@ const Portfolio = () => {
       technologies: ['React', 'Node', 'MongoDB'], // Fixed 'Node.js' to 'Node'
     },
     {
-      image: chatzooka,
+      image: './chatzooka.png',
       title: 'Chatzooka',
       description:
         'A fully functional Chat Application using the MERN stack and Firebase',
       link: 'https://github.com/Zayan-Mohamed/Chatzooka.git',
       website: 'https://chatzooka.vercel.app/',
-      technologies: [ 'React', 'Node', 'Firebase'], // Fixed 'Express.js' and 'Node.js'
+      technologies: ['React', 'Node', 'Firebase'], // Fixed 'Express.js' and 'Node.js'
+    },
+    {
+      image: './pivot.png',
+      title: 'Pivot',
+      description:
+        'A fully functional  Task Management Application using TypeScript and Next.js and Hosted in AWS Amplify, EC2 and RDS, with S3 for file storage.',
+      link: 'https://github.com/Zayan-Mohamed/pivot.git',
+      website: 'https://main.d2vvhs859yv4a5.amplifyapp.com/',
+      technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'AWS'], //
     },
   ]
 
@@ -111,14 +122,32 @@ const Portfolio = () => {
                   />
                 </h2>
                 <div className="project-technologies">
-                  {project.technologies.map((tech, i) => (
-                    <FontAwesomeIcon
-                      key={i}
-                      icon={techIcons[tech] || faDatabase}
-                      title={tech}
-                      className="technology-icon"
-                    />
-                  ))}
+                  {project.technologies.map((tech, i) => {
+                    const Icon = techIcons[tech] // Get the icon from techIcons
+                    return Icon ? (
+                      typeof Icon === 'function' ? ( // If Icon is a react-icon component
+                        <Icon
+                          key={i}
+                          title={tech}
+                          className="technology-icon"
+                        />
+                      ) : (
+                        <FontAwesomeIcon
+                          key={i}
+                          icon={Icon}
+                          title={tech}
+                          className="technology-icon"
+                        />
+                      )
+                    ) : (
+                      <FontAwesomeIcon
+                        key={i}
+                        icon={faDatabase} // Default icon
+                        title={tech}
+                        className="technology-icon"
+                      />
+                    )
+                  })}
                 </div>
               </div>
             </div>
