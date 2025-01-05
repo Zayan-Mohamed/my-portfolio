@@ -4,7 +4,7 @@ Welcome to the source code for my personal portfolio website! This project showc
 
 ## Live Demo
 
-[View Portfolio](https://portfolio/zayan.vercel.app)
+[View Portfolio](https://portfolio-zayan.vercel.app)
 
 ## Features
 
@@ -30,8 +30,8 @@ Welcome to the source code for my personal portfolio website! This project showc
    cd Zayan-Mohamed-my-portfolio
    npm install
    npm start
-   Open http://localhost:3000 in your browser.
    ```
+**Open http://localhost:3000 in your browser.**
 
 ## Usage
 
