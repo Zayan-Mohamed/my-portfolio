@@ -227,3 +227,14 @@
     margin-bottom: 20px;
   }
 }
+
+.vertical-timeline-element-content {
+    border: none !important; /* Remove any default borders */
+    box-shadow: none !important; /* Remove the shadow that may look like a border */
+    background-color: transparent !important; /* Ensure no unwanted background */
+  }
+  
+  .vertical-timeline-element-content::before {
+    display: none !important; /* Remove any pseudo-elements causing a border effect */
+  }
+  

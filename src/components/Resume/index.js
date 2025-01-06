@@ -3,7 +3,9 @@ import { Link, Element } from 'react-scroll'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
-
+import SkillChart from './SkillChart'
+import Timeline from './Timeline'
+import ProjectCard from './ProjectCard'
 const Resume = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
 
@@ -100,34 +102,10 @@ const Resume = () => {
         <div className="resume-content">
           <div className="resume-left">
             <Element name="education-section">
-              <section id="education-section">
-                <h2>Education</h2>
-                <p>
-                  BSc. (Hons) in Data Science, SLIIT University <br /> Year 2
-                  Semester 1, CGPA: 3.185
-                </p>
-                <hr />
-                <p>G.C.E. Advanced Level (Commerce), Zahira College Colombo</p>
-                <hr />
-                <p>G.C.E. Ordinary Level, Al-Hikma College Colombo</p>
-              </section>
-            </Element>
-            <Divider />
-
-            <Element name="experience-section">
-              <section id="experience-section">
-                <h2>Experience</h2>
-                <p>
-                  <b>Trainee Associate</b> <br />{' '}
-                  <i>Legacy Health LLC, Colombo</i>
-                </p>
-                <p>
-                  Coordinated with U.S. insurance companies to process claims
-                  and secure reimbursements for Legacy Health physicians in the
-                  Emergency Room of Texas, ensuring compliance and resolving
-                  issues efficiently.
-                </p>
-                <hr />
+              {/* Timeline Section */}
+              <section className="timeline-section">
+                <h2>Education & Experience</h2>
+                <Timeline />
               </section>
             </Element>
             <Divider />
@@ -135,51 +113,16 @@ const Resume = () => {
             <Element name="projects-section">
               <section id="projects-section">
                 <h2>Projects</h2>
-                <p>
-                  <b>Real Estate Price Prediction Project — Python</b>
-                  <br />
-                  Developed a data science project to build a real estate price
-                  prediction website.
-                </p>
-                <hr />
-                <p>
-                  <b>EMSystem — Java, MySQL Workbench</b>
-                  <br />
-                  Designed and developed a professional Employee Management
-                  System with role-based access for admins and employees.
-                </p>
-                <hr />
-                <p>
-                  <b>Shopping-Cart - Material-UI, MERN</b>
-                  <br />
-                  Designed and developed an online shopping store web
-                  application using MERN stack.
-                </p>
-                <hr />
-                <p>
-                  <b>Chatzooka - React, Firebase</b>
-                  <br />
-                  Developed a fully functional Chat Application using the MERN
-                  stack and Firebase, featuring real-time messaging, user
-                  authentication, and secure data storage.
-                </p>
+                <ProjectCard />
               </section>
             </Element>
             <Divider />
 
             <Element name="skills-section">
-              <section id="skills-section">
+              {/* Skill Chart Section */}
+              <section className="skills-section">
                 <h2>Skills</h2>
-                <p>
-                  Programming Languages: Python, Java, C/C++, HTML, JavaScript,
-                  CSS, .NET
-                </p>
-                <p>Data Analysis Tools: SQL, Power BI, Jupyter Notebooks</p>
-                <p>Machine Learning Frameworks: TensorFlow, React</p>
-                <p>
-                  Other Skills: Database Management, Data Cleansing, Data
-                  Visualization, Version Control (Git)
-                </p>
+                <SkillChart />
               </section>
             </Element>
           </div>
