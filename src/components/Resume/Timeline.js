@@ -28,7 +28,7 @@ const Timeline = () => {
       {/* Education Section */}
       <VerticalTimelineElement
         className="vertical-timeline-element--education"
-        date="2024 (Expected)"
+        date="2027 (Expected)"
         iconStyle={{ background: '#4B49AC', color: '#fff' }}
         icon={<FaGraduationCap />}
       >
@@ -49,13 +49,13 @@ const Timeline = () => {
           >
             SLIIT University
           </h4>
-          <p>CGPA: 3.185 (Year 2 Semester 1)</p>
+          <p>CGPA: 3.23 (Year 2 Semester 2)</p>
         </div>
       </VerticalTimelineElement>
 
       <VerticalTimelineElement
         className="vertical-timeline-element--education"
-        date="2019"
+        date="2020"
         iconStyle={{ background: '#4B49AC', color: '#fff' }}
         icon={<FaGraduationCap />}
       >
@@ -82,7 +82,7 @@ const Timeline = () => {
       {/* Experience Section */}
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        date="2023 - Present"
+        date="2024 March - 2024 September"
         iconStyle={{ background: '#F3797E', color: '#fff' }}
         icon={<FaBriefcase />}
       >
