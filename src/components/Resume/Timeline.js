@@ -94,7 +94,9 @@ const Timeline = () => {
             e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.3)'
           }}
         >
-          <h3 className="vertical-timeline-element-title">Trainee Associate</h3>
+          <h3 className="vertical-timeline-element-title">
+            Trainee - Data Analytics
+          </h3>
           <h4
             className="vertical-timeline-element-subtitle"
             style={{ color: '#98BDFF' }}
@@ -102,8 +104,10 @@ const Timeline = () => {
             Legacy Health LLC, Colombo
           </h4>
           <p>
-            Coordinated with U.S. insurance companies to process claims and
-            secure reimbursements.
+            Handling 10,000+ patient records; implemented HIPAA-compliant
+            security protocols Led integration with 5 major U.S. insurance
+            providers, processing 200+ monthly claims at 99% accuracy while
+            achieving 75% reduction in manual errors.
           </p>
         </div>
       </VerticalTimelineElement>
