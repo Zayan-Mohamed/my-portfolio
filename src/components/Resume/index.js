@@ -89,7 +89,7 @@ const Resume = () => {
           </ul>
 
           <a
-            href="https://drive.google.com/file/d/1mVZ6EFWn-2dVtUT-HgmQKFNqa7g-73vL/view?usp=sharing"
+            href="https://drive.google.com/file/d/1ETowQrEp_muGc_a-nsk44ZdT4hRRnnVG/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             download="Zayan_Mohamed_CV"

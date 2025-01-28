@@ -13,13 +13,14 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDatabase } from '@fortawesome/free-solid-svg-icons'
-import { SiNextdotjs, SiPostgresql, SiFirebase, SiTypescript } from 'react-icons/si'
+import { SiNextdotjs, SiPostgresql, SiFirebase, SiTypescript, SiTailwindcss } from 'react-icons/si'
 import './index.scss'
 
 const techIcons = {
   React: faReact,
   JavaScript: faJs,
   TypeScript: SiTypescript,
+  TailWind: SiTailwindcss,
   Node: faNodeJs,
   CSS: faCss3,
   MongoDB: faDatabase,
@@ -28,8 +29,8 @@ const techIcons = {
   Firebase: SiFirebase,
   Java: faJava,
   AWS: faAws,
-  'Next.js': SiNextdotjs, // Add Next.js icon
-  PostgreSQL: SiPostgresql, // Add PostgreSQL icon
+  'Next.js': SiNextdotjs,
+  PostgreSQL: SiPostgresql, 
 }
 
 const Portfolio = () => {
@@ -51,7 +52,7 @@ const Portfolio = () => {
       description:
         'A comprehensive Employee Management System for managing employees.',
       link: 'https://github.com/Zayan-Mohamed/my-portfolio.git',
-      website: 'https://example.com/emsystem',
+      website: '#',
       technologies: ['Java', 'CSS', 'HTML'], // Fixed 'Java' to 'Java'
     },
     {
@@ -60,7 +61,7 @@ const Portfolio = () => {
       description:
         'A fully functional shopping cart with payment gateway integration.',
       link: 'https://github.com/Zayan-Mohamed/Shopping-Cart.git',
-      website: 'https://example.com/shopping-cart',
+      website: '#',
       technologies: ['React', 'Node', 'MongoDB'], // Fixed 'Node.js' to 'Node'
     },
     {
@@ -79,7 +80,7 @@ const Portfolio = () => {
         'A fully functional  Task Management Application using TypeScript and Next.js and Hosted in AWS Amplify, EC2 and RDS, with S3 for file storage.',
       link: 'https://github.com/Zayan-Mohamed/pivot.git',
       website: 'https://main.d2vvhs859yv4a5.amplifyapp.com/',
-      technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'AWS'], //
+      technologies: ['Next.js', 'TypeScript', 'TailWind', 'PostgreSQL', 'AWS'],
     },
   ]
 
